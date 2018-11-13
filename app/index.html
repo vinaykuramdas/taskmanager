@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple task Manager</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="app.js"></script>
+  <link rel="stylesheet" type="text/css" href="app.css">
+</head>
+<body ng-app="myApp" ng-controller="AppCtrl">
+<div id="board">
+  <h4>&#x2605 To Do App</h4>
+  <div id="List">
+    <label>List1</label>
+    <button class="deleteList" ng-click="delList()">Delete this list</button>
+
+    <div id="mycard1">
+      <div class="delCard">
+        <ng-label>Card title</ng-label>
+        <button class="delete" ng-click="DeleteCard1_0()"><i class="fa fa-trash"></i>DeleteCard</button>
+        </br>
+        <textarea id="cardDesc" ng-model="carddesc1_0" placeholder="Card Description"></textarea>
+        </br>
+        <textarea id="comment" ng-model="comment1_0"  placeholder="Write Comments Here.." required></textarea>
+        </br>
+        <button class ="Add" ng-click="Addcomment1_0()" >Add Comment</button>
+        <ol>
+          <li ng-repeat="comm in comments">
+      <span  ng-click="deleteSkill($index)">
+      <span>{{comm}}</span>
+      <i class="fa fa-close" style="color:red;padding-left:15px"></i></span>
+          </li>
+        </ol>
+      </div>
+    </div>
+    <br>
+    <div id="mycard1">
+      <div class="delCard1_1">
+        <ng-label>Card title</ng-label>
+        <button class="delete" ng-click="DeleteCard1_1()"><i class="fa fa-trash"></i>DeleteCard</button>
+        </br>
+        <textarea id="cardDesc" ng-model="carddesc1_1" placeholder="Card Description"></textarea>
+        </br>
+        <textarea id="comment" ng-model="comment1_1"  placeholder="Write Comments Here.." required></textarea>
+        </br>
+        <button class ="Add" ng-click="Addcomment1_1()" >Add Comment</button>
+        <ol>
+          <li ng-repeat="comm in comments1_1">
+      <span  ng-click="deleteSkill1_1($index)">
+      <span>{{comm}}</span><i class="fa fa-close" style="color:red;padding-left:15px"></i></span>
+          </li>
+        </ol>
+      </div>
+    </div>
+    <br>
+    <div id="mycard1" >
+      <div class="delCard1_2">
+        <ng-label>Card title</ng-label>
+        <button class="delete" ng-click="DeleteCard1_2()"><i class="fa fa-trash"></i>DeleteCard</button>
+        </br>
+        <textarea id="cardDesc" ng-model="carddesc1_2" placeholder="Card Description"></textarea>
+        </br>
+        <textarea id="comment" ng-model="comment1_2"  placeholder="Write Comments Here.." required></textarea>
+        </br>
+        <button class ="Add" ng-click="Addcomment1_2()" >Add Comment</button>
+        <ol>
+          <li ng-repeat="comm in comments1_2">
+      <span ng-click="deleteSkill1_2($index)">
+      <span>{{comm}}</span><i class="fa fa-close" style="color:red;padding-left:15px"></i>
+      </span>
+          </li>
+        </ol>
+      </div>
+    </div>
+    <ul>
+      <li class="newCards" ng-repeat = "card in cards">
+        <br>
+        <div id="mycard">
+          <div class="delCards">
+            <ng-label>Card title</ng-label>
+            <button class="delete" ng-click="DeleteCard($index)"><i class="fa fa-trash"></i>DeleteCard</button>
+            </br>
+            <textarea id="cardDesc" ng-model="carddesc" placeholder="Card Description"></textarea>
+            </br>
+            <textarea id="commentnew" ng-model="comment"  placeholder="Write Comments Here.." required></textarea>
+            </br>
+            <button class ="Add" ng-click="Addcomment($index)" >Add Comment</button>
+            <ol>
+              <li ng-repeat="commn in comment_new">
+      <span ng-click="deleteSkill($index)">
+      <span>{{commn}}</span><i class="fa fa-close" style="color:red;padding-left:15px"></i>
+      </span>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <button class ="Addcard" ng-click="addCard()">Add new card..</button>
+  </div>
+
+
+  <div id="List2">
+    <label>List2</label>
+    <button class="deleteList" ng-click="delList2()">Delete this list</button>
+
+    <div id="mycard1" >
+      <div class="delCard2_0">
+        <ng-label>Card title</ng-label>
+        <button class="delete" ng-click="DeleteCard2_0()"><i class="fa fa-trash"></i>DeleteCard</button>
+        </br>
+        <textarea id="cardDesc" ng-model="carddesc2_0" placeholder="Card Description"></textarea>
+        </br>
+        <textarea id="comment" ng-model="comment2_0"  placeholder="Write Comments Here.." required></textarea>
+        </br>
+        <button class ="Add" ng-click="Addcomment2_0()" >Add Comment</button>
+        <ol>
+          <li ng-repeat="comm in comments2_0">
+      <span ng-click="deleteSkill2_0($index)">
+      <span>{{comm}}</span><i class="fa fa-close" style="color:red;padding-left:15px"></i>
+      </span>
+          </li>
+        </ol>
+      </div>
+    </div>
+    <br>
+    <div id="mycard1" >
+      <div class="delCard2_1">
+        <ng-label>Card title</ng-label>
+        <button class="delete" ng-click="DeleteCard2_1()"><i class="fa fa-trash"></i>DeleteCard</button>
+        </br>
+        <textarea id="cardDesc" ng-model="carddesc2_1" placeholder="Card Description"></textarea>
+        </br>
+        <textarea id="comment" ng-model="comment2_1"  placeholder="Write Comments Here.." required></textarea>
+        </br>
+        <button class ="Add" ng-click="Addcomment2_1()" >Add Comment</button>
+        <ol>
+          <li ng-repeat="comm in comments2_1">
+      <span ng-click="deleteSkill2_1($index)">
+      <span>{{comm}}</span><i class="fa fa-close" style="color:red;padding-left:15px"></i>
+      </span>
+          </li>
+        </ol>
+      </div>
+    </div>
+    <br>
+    <ul>
+      <li class="newCards" ng-repeat="card1 in cards1">
+        <br>
+        <div id="mycard">
+          <ng-label>Card title</ng-label>
+          <button class="delete" ng-click="DeleteCard2(index)"><i class="fa fa-trash"></i>DeleteCard</button>
+          </br>
+          <textarea id="cardDesc" ng-model="name" placeholder="Card Description"></textarea>
+          </br>
+          <textarea id="comment" ng-model="name"
+                    placeholder="Write Comments Here.." required></textarea>
+          </br>
+          <button class ="Add" ng-click="Addcomment2($index)">Add Comment</button>
+          <ol>
+            <li ng-repeat="comm in comment_new2">
+      <span ng-click="deleteSkill($index)">
+      <span>{{comm}}</span><i class="fa fa-close" style="color:red;padding-left:15px"></i>
+      </span>
+            </li>
+          </ol>
+        </div>
+      </li>
+    </ul>
+    <button class ="Addcard" ng-click="addCard2()">Add new card..</button>
+  </div>
+
+
+  <div id="List3">
+    <label>List3</label>
+    <button class="deleteList" ng-click="delList3()">Delete this list</button>
+
+    <div id="mycard1" >
+      <div class="delCard3_0">
+        <ng-label>Card title</ng-label>
+        <button class="delete" ng-click="DeleteCard3_0()"><i class="fa fa-trash"></i>DeleteCard</button>
+        </br>
+        <textarea id="cardDesc" ng-model="carddesc3_0" placeholder="Card Description"></textarea>
+        </br>
+        <textarea id="comment" ng-model="comment3_0"  placeholder="Write Comments Here.." required></textarea>
+        </br>
+        <button class ="Add" ng-click="Addcomment3_0()" >Add Comment</button>
+        <ol>
+          <li ng-repeat="comm in comments3_0">
+      <span ng-click="deleteSkill3_0($index)">
+      <span>{{comm}}</span><i class="fa fa-close" style="color:red;padding-left:15px"></i>
+      </span>
+          </li>
+        </ol>
+      </div>
+    </div>
+    <br>
+    <ul>
+      <li class="newCards" ng-repeat="card2 in cards2">
+        <br>
+        <div id="mycard">
+          <ng-label>Card title</ng-label>
+          <button class="delete" ng-click="DeleteCard3()"><i class="fa fa-trash"></i>DeleteCard</button>
+          </br>
+          <textarea id="cardDesc" ng-model="name" placeholder="Card Description"></textarea>
+          </br>
+          <textarea id="comment" ng-model="names"
+                    placeholder="Write Comments Here.." required ></textarea>
+          </br>
+          <button class ="Add" ng-click="Addcomment3($index)">Add Comment</button>
+          <ol>
+            <li ng-repeat="comm in comment_new3">
+      <span ng-click="deleteSkill($index)">
+      <span>{{comm}}</span><i class="fa fa-close" style="color:red;padding-left:15px"></i>
+      </span>
+            </li>
+          </ol>
+        </div>
+      </li>
+    </ul>
+    <button class ="Addcard" ng-click="addCard3()">Add new card..</button>
+  </div>
+
+  <div id="List4">
+
+    <button class="addnewList" ng-click="addnewlist()">Add new list..</button>
+
+    <ul>
+
+      <li class="newCards" ng-repeat="card4 in cards4">
+        <label>List4</label>
+        <button class="deleteList" ng-click="delList4()">Delete this list</button>
+        <br>
+        <div id="mycard1">
+          <div class="delcard4_0">
+            <ng-label>Card title</ng-label>
+            <button class="delete" ng-click="DeleteCard4_1()"><i class="fa fa-trash"></i>DeleteCard</button>
+            </br>
+            <textarea id="cardDesc" ng-model="caeddesc4_0" placeholder="Card Description"></textarea>
+            </br>
+            <textarea id="comment" ng-model="comment4_0"
+                      placeholder="Write Comments Here.." required></textarea>
+            </br>
+            <button class ="Add" ng-click="Addcomment4()">Add Comment</button>
+            <ol>
+              <li ng-repeat="comm in comments4_0">
+      <span ng-click="deleteSkill4_0($index)">
+        <span>{{comm}}</span><i class="fa fa-close" style="color:red;padding-left:15px"></i></span>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <br>
+        <ul>
+          <li class="newCards" ng-repeat = "newcard in cards5">
+            <br>
+            <div id="mycard">
+              <ng-label>Card title</ng-label>
+              <button class="delete" ng-click="DeleteCard4(index)"><i class="fa fa-trash"></i>DeleteCard</button>
+              </br>
+              <textarea id="cardDesc" ng-model="name" placeholder="Card Description"></textarea>
+              </br>
+              <textarea id="comment" ng-model="namess"  placeholder="Write Comments Here.." required></textarea>
+              </br>
+              <button class ="Add" ng-click="Addcomment4($index)">Add Comment</button>
+              <ol>
+                <li ng-repeat="comm in comment_new4">
+      <span ng-click="deleteSkill($index)">
+      <span>{{comm}}</span><i class="fa fa-close" style="color:red;padding-left:15px"></i>
+      </span>
+                </li>
+              </ol>
+            </div>
+          </li>
+        </ul>
+        <br>
+        <button class ="Addcard" ng-click="addCard4()">Add new card..</button>
+      </li>
+    </ul>
+
+  </div>
+</div>
+</body>
+</html>
